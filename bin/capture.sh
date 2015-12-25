@@ -35,6 +35,7 @@ DELAYS=(
 	'5'
 	'6'
 	'7'
+	'8'
 	)
 
 # Define packet sizes
@@ -187,7 +188,7 @@ do
 done
 
 # Start wireshark
-tcpdump -i enp2s0 -w $HOMEDIR/$TARGETDIR/$STARTTIME.pngpcap 
+tcpdump -i enp2s0 -y EN10MB -w $HOMEDIR/$TARGETDIR/$STARTTIME.pngpcap 
 		#ping -i $DELAY0 -s $p $t > $HOMEDIR/$TARGETDIR/$STARTTIME-$t-$p-$DELAY0.ping &
 		#ping -i $DELAY1 -s $p $t > $HOMEDIR/$TARGETDIR/$STARTTIME-$t-$p-$DELAY1.ping &
 		#ping -i $DELAY2 -s $p $t > $HOMEDIR/$TARGETDIR/$STARTTIME-$t-$p-$DELAY2.ping &
