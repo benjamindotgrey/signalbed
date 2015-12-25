@@ -56,36 +56,9 @@ DELAYS=(
 	'0.27'
 	'0.28'
 	'0.29'
-	'0.3'
-	'0.4'
-	'0.5'
-	'0.6'
-	'0.7'
-	'0.8'
-	'0.9'
-	'1.0'
-	'1.1'
-	'1.2'
-	'1.3'
-	'1.4'
-	'1.5'
-	'1.6'
-	'1.7'
-	'1.8'
-	'1.9'
-	'2.0'
-	'2.1'
-	'2.2'
-	'2.3'
-	'2.4'
-	'2.5'
-	'2.6'
-	'2.7'
-	'2.8'
-	'2.9'
-	'3.0'
-	'3.1'
 	)
+
+# Define packet sizes
 PACKETSIZES=(
 		'0.001' 
 		'0.002' 
@@ -210,17 +183,13 @@ PACKETSIZES=(
 		90 
 		100 
 	)
+
+# Define targets
 TARGETS=(
 		$LOOPBACK 
 		$LOCALHOST 
 		$GATEWAY3
 	)
-		#$GATEWAY1 
-		#$RANGE3
-		#$GATEWAY0 
-		#$RANGE0 
-		#$RANGE1 
-		#$RANGE2 
 
 # Kill previous captures
 pkill ping
@@ -237,6 +206,9 @@ do
 		done
 	done
 done
+
+# Start wireshark
+tcpdump -i enp2s0 -w $HOMEDIR/$TARGETDIR/$STARTTIME.pngpcap 
 		#ping -i $DELAY0 -s $p $t > $HOMEDIR/$TARGETDIR/$STARTTIME-$t-$p-$DELAY0.ping &
 		#ping -i $DELAY1 -s $p $t > $HOMEDIR/$TARGETDIR/$STARTTIME-$t-$p-$DELAY1.ping &
 		#ping -i $DELAY2 -s $p $t > $HOMEDIR/$TARGETDIR/$STARTTIME-$t-$p-$DELAY2.ping &
@@ -269,8 +241,6 @@ done
 	#done
 #done
 
-# Start wireshark
-tcpdump -i enp2s0 -w $HOMEDIR/$TARGETDIR/$STARTTIME.pngpcap 
 	
 
 # Ping loopback #
@@ -565,3 +535,33 @@ tcpdump -i enp2s0 -w $HOMEDIR/$TARGETDIR/$STARTTIME.pngpcap
 
 # Pipe output
 #tail -f /home/grey/tcpdump/$STARTTIME.pngpcap
+
+	#'0.3'
+	#'0.4'
+	#'0.5'
+	#'0.6'
+	#'0.7'
+	#'0.8'
+	#'0.9'
+	#'1.0'
+	#'1.1'
+	#'1.2'
+	#'1.3'
+	#'1.4'
+	#'1.5'
+	#'1.6'
+	#'1.7'
+	#'1.8'
+	#'1.9'
+	#'2.0'
+	#'2.1'
+	#'2.2'
+	#'2.3'
+	#'2.4'
+	#'2.5'
+	#'2.6'
+	#'2.7'
+	#'2.8'
+	#'2.9'
+	#'3.0'
+	#'3.1'
